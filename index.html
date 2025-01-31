@@ -1,0 +1,79 @@
+<!-- SachinAkash01 | 2022 -->
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Login Page | Sachin Akash</title>
+<link href="/CSS/index.css" rel="stylesheet" type="text/css">
+    <style>
+    @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+    </style>
+    <script>
+    function checkPassword()
+        {
+            let pw = document.getElementById("txtPassword").value;
+            let cpw = document.getElementById("txtConfirmPassword").value;
+            if(pw != cpw)
+                {
+                    alert("Password and Confirm Password should be the same! Please check again!!");
+                    event.preventDefault();
+                }
+        }
+    </script>
+</head>
+<body>
+    <h2>Sign Up Form</h2>
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form>
+			<h1>Create an Account!</h1>
+					
+			<input type="email" placeholder="Email" required name="txtEmail" id="email"/>
+			<input type="password" placeholder="Password" id="password" name="txtPassword" required/>
+            <input type="password" placeholder="Confirm Password" id="confirmPassword" name="txtConfirmPassword"/>      
+            
+			<input type="submit" value="Sign Up" onClick="checkPassword()" id="registerBtn" name="btnSignUp">
+            <a href="#">Home</a>
+		</form>
+        
+	</div>
+	<div class="form-container sign-in-container">
+		<form>
+			<h1>Sign In</h1>
+		 
+			<input type="email" id="loginEmail" name="txtEmail" placeholder="Email" />
+			<input type="password" id="loginPassword" name="txtPassword" placeholder="Password" />
+			<a href="#">Forgot your password?</a>
+			<input type="submit" value="Sign In" id="loginBtn" name="btnSubmit">
+            <br>
+            <a href="#">Back to Home</a>
+        </form>
+         
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Welcome Back!</h1>
+				<p>To keep connected with us please login with your personal info</p>
+                
+				<input type="submit" class="ghost" id="signIn" value="Sign In">
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>DVD</h1>
+				<p>Donadillo, Versoza, Delos Reyes</p>
+                 
+				<input type="submit" class="ghost" id="signUp" value="Sign Up"> 
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="module" src="https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js"></script>
+<script type="module" src="https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js"></script>
+<script type="module" src="https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js"></script>
+<script type="module" src="/Javascript/index.js"></script>
+<script type="module" src="/Javascript/login.js"></script>
+<script type="module" src="/Javascript/signup.js"></script>
+<script type="module" src="/Javascript/firebase.js"></script>
+</body>
+</html>
